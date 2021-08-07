@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'x']
 input2 = [
 {'key': 'a', 'value': 3},
@@ -16,6 +18,11 @@ def count(input):
             my_dict[i]+=1
     return my_dict
 
+def count_renew(input):
+    my_dict=defaultdict(lambda: 0)
+    for i in input:
+        my_dict[i]+=1
+    return my_dict
 
 def group_by_key(input):
     my_dict={}
@@ -26,5 +33,21 @@ def group_by_key(input):
             my_dict[i["key"]]+=i["value"]
     return my_dict
 
+
+def group_by_key_renew(input):
+    my_dict=defaultdict(lambda: 0)
+    for i in input:
+        my_dict[i["key"]]+=i["value"]
+    return my_dict
+
+
+
+
 print(count(input1)) # should print {'a': 3, 'b': 1, 'c': 2, 'x': 1}
+print("-"*30)
+print(count_renew(input1)) 
+print("-"*30)
 print(group_by_key(input2)) # should print {‘a’: 6, ‘b’: 1, ‘c’: 7}
+print("-"*30)
+print(group_by_key_renew(input2)) 
+

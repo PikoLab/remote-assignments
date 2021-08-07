@@ -7,12 +7,13 @@ def binary_search_first(numbers,target):
     hi=len(numbers)-1
     while (lo <= hi):
         mi=(lo+hi)//2
-        if (numbers[mi] == target and numbers[mi]>numbers[mi-1]) or hi==lo:
+        if (numbers[mi] == target and numbers[mi]>numbers[mi-1]) or (hi==lo and numbers[mi]>=target):
             return mi
         elif numbers[mi] >= target:
             hi=mi-1
         elif numbers[mi] < target: 
             lo=mi+1
+    return len(arr)
 
 
 print(binary_search_first(arr, 2)) # should print 1 (the index of the target number ‘2’)
@@ -22,7 +23,11 @@ print(binary_search_first(arr, 1))
 print(binary_search_first(arr, 4))
 print(binary_search_first(arr, 6))
 print(binary_search_first(arr, 7))
+print(binary_search_first(arr, 8))
+print(binary_search_first(arr, 100))
+print(binary_search_first(arr, 0)) 
 print("-"*30)
+
 print(bisect.bisect_left(arr,2))
 print(bisect.bisect_left(arr,5))
 print(bisect.bisect_left(arr,3))
@@ -30,3 +35,6 @@ print(bisect.bisect_left(arr,1))
 print(bisect.bisect_left(arr,4))
 print(bisect.bisect_left(arr,6))
 print(bisect.bisect_left(arr,7))
+print(bisect.bisect_left(arr,8))
+print(bisect.bisect_left(arr,100))
+print(bisect.bisect_left(arr,0))
