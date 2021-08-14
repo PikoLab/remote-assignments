@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Name</title>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+    </head>
+    <body>
+        <h1>What's your name?</h1>
+        <form id="form" class="container1" action = "{{ url_for('trackName') }}" method = "POST">
+            <input type="text" name="name" placeholder="your name" value="{{ saves.get('name', '') }}" id="name">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </body>
+</html>

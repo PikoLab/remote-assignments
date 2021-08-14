@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculation</title>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+    </head>
+    <body>
+        <h1>Let's Calculate The Sum of 1 + 2 + 3 ..+ N</h1>
+        <form id="form" class="container1">
+            <input type="text" name="n" placeholder="enter a number as N" id="n">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+        <script type="text/javascript" src="{{url_for('static', filename='sum.js')}}"></script>
+    </body>
+</html>
